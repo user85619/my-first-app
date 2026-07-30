@@ -45,7 +45,6 @@ function initEnquiryForm() {
     { id: "parent-name", message: "Please enter your name." },
     { id: "email", message: "Please enter a valid email address." },
     { id: "phone", message: "Please enter a phone number." },
-    { id: "child-name", message: "Please enter your child's name." },
     { id: "child-age", message: "Please enter your child's age." },
   ];
 
