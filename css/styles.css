@@ -988,6 +988,40 @@ p {
   margin-top: 16px;
 }
 
+/* ---------- Policy content (Privacy) ---------- */
+.policy-content {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.policy-content h2 {
+  font-size: 1.3rem;
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+
+.policy-content p {
+  margin-bottom: 16px;
+}
+
+.policy-content ul {
+  margin: 0 0 16px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.policy-content li {
+  list-style: disc;
+  color: var(--color-text-muted);
+}
+
+.policy-content a {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
 /* ---------- Footer ---------- */
 .site-footer {
   background: var(--color-text);
@@ -1049,6 +1083,15 @@ p {
   gap: 12px;
   font-size: 0.82rem;
   color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-bottom a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: underline;
+}
+
+.footer-bottom a:hover {
+  color: var(--color-white);
 }
 
 /* ---------- Responsive ---------- */
