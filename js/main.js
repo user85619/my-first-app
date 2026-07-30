@@ -29,16 +29,17 @@ function setFooterYear() {
 }
 
 /**
- * Client-side validation + confirmation for the enquiry/booking form.
- * There is no backend wired up yet — on successful validation this simply
- * shows a confirmation message. Replace the "submit" logic with a real
- * fetch()/API call (or form service) when one is available.
+ * Client-side validation + submission for the enquiry/booking form.
+ * Submits to the Formspree endpoint set in the form's `action` attribute
+ * (see contact.html and README.md for setup) so enquiries arrive by email.
  */
 function initEnquiryForm() {
   const form = document.getElementById("enquiry-form");
   if (!form) return;
 
   const successMessage = document.getElementById("form-success");
+  const errorMessage = document.getElementById("form-error");
+  const submitButton = form.querySelector('button[type="submit"]');
 
   const requiredFields = [
     { id: "parent-name", message: "Please enter your name." },
@@ -48,7 +49,7 @@ function initEnquiryForm() {
     { id: "child-age", message: "Please enter your child's age." },
   ];
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     let isValid = true;
@@ -75,11 +76,30 @@ function initEnquiryForm() {
       return;
     }
 
-    // Placeholder "submit": no backend is connected yet.
-    successMessage.classList.add("visible");
-    successMessage.scrollIntoView({ behavior: "smooth", block: "center" });
-    form.reset();
-    form.querySelectorAll(".form-group.error").forEach((el) => el.classList.remove("error"));
+    errorMessage.classList.remove("visible");
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending…";
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      if (!response.ok) throw new Error("Submission failed");
+
+      successMessage.classList.add("visible");
+      successMessage.scrollIntoView({ behavior: "smooth", block: "center" });
+      form.reset();
+      form.querySelectorAll(".form-group.error").forEach((el) => el.classList.remove("error"));
+    } catch (err) {
+      errorMessage.classList.add("visible");
+      errorMessage.scrollIntoView({ behavior: "smooth", block: "center" });
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = "Send Enquiry";
+    }
   });
 
   // Clear an error state as soon as the visitor starts fixing a field.
