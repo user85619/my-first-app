@@ -622,47 +622,90 @@ p {
   margin: 0;
 }
 
-/* ---------- Team ---------- */
-.team-grid {
+/* ---------- Pricing (Fees page) ---------- */
+.pricing-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 28px;
+  margin-bottom: 40px;
 }
 
-.team-card {
-  text-align: center;
+.pricing-card {
+  display: flex;
+  flex-direction: column;
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 32px 24px;
+  border-radius: var(--radius-lg);
+  padding: clamp(28px, 3vw, 36px);
+  box-shadow: var(--shadow-card);
 }
 
-.team-avatar {
-  width: 84px;
-  height: 84px;
-  border-radius: 50%;
-  margin-inline: auto;
-  margin-bottom: 18px;
-  background: var(--color-primary-light);
+.pricing-header h3 {
+  margin-bottom: 14px;
+}
+
+.price {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.price-amount {
+  font-size: 2.6rem;
+  font-weight: 700;
   color: var(--color-primary-dark);
+  letter-spacing: -0.02em;
 }
 
-.team-card h3 {
-  margin-bottom: 4px;
+.price-unit {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
 }
 
-.team-role {
+.pricing-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.pricing-list li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.pricing-list li svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  color: var(--color-primary);
+}
+
+.pricing-note {
+  background: var(--color-accent-light);
+  color: var(--color-text);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+}
+
+.pricing-note strong {
   color: var(--color-accent-dark);
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 10px;
 }
 
-.team-card p {
-  font-size: 0.92rem;
+.meals-note {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.pricing-card > .btn {
+  margin-top: auto;
 }
 
 /* ---------- Contact page ---------- */
@@ -876,6 +919,43 @@ p {
   margin: 0;
 }
 
+.form-error {
+  display: none;
+  align-items: flex-start;
+  gap: 14px;
+  background: #fbeeea;
+  border: 1px solid #b3543f;
+  border-radius: var(--radius-md);
+  padding: 20px 22px;
+  margin-bottom: 24px;
+}
+
+.form-error.visible {
+  display: flex;
+}
+
+.form-error svg {
+  width: 24px;
+  height: 24px;
+  color: #b3543f;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.form-error h4 {
+  margin-bottom: 4px;
+  color: #b3543f;
+}
+
+.form-error p {
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+.form-error a {
+  text-decoration: underline;
+}
+
 .field-error {
   display: none;
   color: #b3543f;
@@ -906,6 +986,40 @@ p {
   max-width: 56ch;
   margin-inline: auto;
   margin-top: 16px;
+}
+
+/* ---------- Policy content (Privacy) ---------- */
+.policy-content {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.policy-content h2 {
+  font-size: 1.3rem;
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+
+.policy-content p {
+  margin-bottom: 16px;
+}
+
+.policy-content ul {
+  margin: 0 0 16px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.policy-content li {
+  list-style: disc;
+  color: var(--color-text-muted);
+}
+
+.policy-content a {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
 }
 
 /* ---------- Footer ---------- */
@@ -971,6 +1085,15 @@ p {
   color: rgba(255, 255, 255, 0.5);
 }
 
+.footer-bottom a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: underline;
+}
+
+.footer-bottom a:hover {
+  color: var(--color-white);
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .hero-grid,
@@ -983,8 +1106,7 @@ p {
     order: -1;
   }
 
-  .card-grid,
-  .team-grid {
+  .card-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1036,7 +1158,7 @@ p {
   }
 
   .card-grid,
-  .team-grid {
+  .pricing-grid {
     grid-template-columns: 1fr;
   }
 
