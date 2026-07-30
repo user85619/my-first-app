@@ -8,9 +8,9 @@
   --color-bg: #faf7f2;
   --color-bg-alt: #f1ece3;
   --color-bg-card: #ffffff;
-  --color-primary: #7c9885;
-  --color-primary-dark: #5f7a68;
-  --color-primary-light: #e4ebe4;
+  --color-primary: #1b3a5c;
+  --color-primary-dark: #11263d;
+  --color-primary-light: #e0e6ed;
   --color-accent: #e8b4a0;
   --color-accent-dark: #d99a83;
   --color-accent-light: #f7e6de;
@@ -20,7 +20,7 @@
   --color-white: #ffffff;
 
   /* Type */
-  --font-base: "Poppins", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-base: "PT Serif", Georgia, "Times New Roman", serif;
 
   /* Layout */
   --max-width: 1120px;
@@ -193,32 +193,33 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-block: 18px;
+  padding-block: 30px;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.5rem;
   color: var(--color-text);
 }
 
 .brand-mark {
-  width: 40px;
-  height: 40px;
+  width: 56px;
+  height: 56px;
   flex-shrink: 0;
 }
 
 .brand-text {
   line-height: 1.15;
+  font-weight: 700;
 }
 
 .brand-text small {
   display: block;
   font-weight: 500;
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   color: var(--color-text-muted);
   letter-spacing: 0.03em;
 }
@@ -377,6 +378,15 @@ p {
 .hero-stat span {
   font-size: 0.85rem;
   color: var(--color-text-muted);
+}
+
+.hero-stat--text {
+  max-width: 12rem;
+}
+
+.hero-stat--text strong {
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 /* ---------- Feature / info cards ---------- */
