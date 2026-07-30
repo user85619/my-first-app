@@ -330,6 +330,17 @@ p {
   color: var(--color-accent-dark);
 }
 
+.eyebrow-link {
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.eyebrow-link:hover {
+  background: var(--color-accent-dark);
+  color: var(--color-white);
+  transform: translateY(-1px);
+}
+
 .hero-copy p {
   margin-block: 20px 32px;
   font-size: 1.08rem;
@@ -378,15 +389,6 @@ p {
 .hero-stat span {
   font-size: 0.85rem;
   color: var(--color-text-muted);
-}
-
-.hero-stat--text {
-  max-width: 12rem;
-}
-
-.hero-stat--text strong {
-  font-size: 0.95rem;
-  font-weight: 600;
 }
 
 /* ---------- Feature / info cards ---------- */
@@ -448,6 +450,13 @@ p {
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
+
+.hours-list-days {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 12px;
 }
 
 .hours-row {
@@ -694,6 +703,15 @@ p {
   height: 18px;
   margin-top: 3px;
   color: var(--color-primary);
+}
+
+.pricing-list li.pricing-subheading {
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-primary-dark);
+  margin-top: 4px;
 }
 
 .pricing-note {

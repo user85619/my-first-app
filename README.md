@@ -23,7 +23,7 @@ assets/         Favicon and any future image assets
 
 ## Enquiry form (Formspree)
 
-The form on `contact.html` (`#enquiry-form`) is validated client-side and submits via [Formspree](https://formspree.io) (free tier) to `https://formspree.io/f/mykrvqba`, so every enquiry (parent name, email, phone, child's name, child's age, preferred days, and any message) is emailed straight to thekidsclubhub@gmail.com — no server of your own required.
+The form on `contact.html` (`#enquiry-form`) is validated client-side and submits via [Formspree](https://formspree.io) (free tier) to `https://formspree.io/f/mykrvqba`, so every enquiry (parent name, email, phone, child's age, preferred days, and any message) is emailed straight to thekidsclubhub@gmail.com — no server of your own required.
 
 If you ever need to point the form at a different Formspree form (e.g. a new account or endpoint), update the single `action="..."` attribute on the `<form id="enquiry-form">` tag in `contact.html` — the JS in `js/main.js` reads the endpoint from there, so nothing else needs to change.
 
